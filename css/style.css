@@ -1,0 +1,131 @@
+:root{
+    --main-padding: 0.4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid darkcyan;
+}
+
+.container{
+    color: #123451;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-areas: 
+    "header header header"
+    "feature-1 feature-2 feature-3"
+    "sign up sign up sign up"
+    "content-1 content-1 content-1"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+    grid-area: header;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+#feature-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    grid-area: feature-1;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+#feature-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(63, 127, 200);
+    grid-area: feature-2;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+#feature-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(170, 180, 35);
+    grid-area: feature-3;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+#content-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 39, 39);
+    grid-area: content-1;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+#sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(105, 146, 52);
+    grid-area: sign-up;
+    padding: var(--main-padding);
+    font-size: 2rem;
+}
+
+@media(min-width: 480px){
+    .container{
+        gap:0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "header"
+        "content-1"
+        "sign-up"
+        "feature-1"
+        "feature-2"
+        "feature-3"
+        ;
+    }
+}
+
+@media(min-width: 768px){
+    
+    .container{
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "header header"
+        "content-1 content-1"
+        "sign-up feature-1"
+        "feature-2 feature-3"
+        ;
+    }
+}
+
+@media(min-width: 1200px){
+    .container{
+        gap: 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "header header header"
+        "feature-1 feature-2 feature-3"
+        "sign-up sign-up sign-up"
+        "content-1 content-1 content-1"
+        ;
+    }
+}
